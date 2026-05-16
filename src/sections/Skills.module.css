@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(91, 214, 160, 0.2);
+  transform: translateY(-2px);
+}
+
+.category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.item {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition);
+}
+
+.item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.card:hover .item { color: var(--text-primary); }
+.card:hover .item::before { background: var(--accent); }
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

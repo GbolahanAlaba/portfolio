@@ -1,53 +1,72 @@
-import { useState, useEffect } from 'react'
-import './Navbar.css'
+import { useState, useEffect } from "react";
+import { useActiveSection } from "../hooks/useScrollReveal";
+import styles from "./Navbar.module.css";
 
-const links = ['about', 'skills', 'projects', 'contact']
+const NAV_LINKS = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+
+const SECTION_IDS = ["about", "experience", "projects", "skills", "contact"];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [active, setActive] = useState('')
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    setActive(id)
-  }
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-inner">
-        <span className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="logo-bracket">[</span>
-          <span className="logo-text">dev</span>
-          <span className="logo-bracket">]</span>
-        </span>
-        <ul className="nav-links">
-          {links.map((link, i) => (
-            <li key={link}>
-              <button
-                onClick={() => scrollTo(link)}
-                className={active === link ? 'active' : ''}
-              >
-                <span className="link-num">0{i + 1}.</span>
-                {link}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="/resume.pdf"
-          className="nav-cta"
-          target="_blank"
-          rel="noreferrer"
-        >
-          resume.pdf
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+      <nav className={`container ${styles.nav}`}>
+        <a href="#hero" className={styles.logo}>
+          <span className={styles.logoInitials}>GA</span>
+          <span className={styles.logoDot} />
         </a>
-      </div>
-    </nav>
-  )
+
+        <ul className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
+          {NAV_LINKS.map(({ label, href }) => {
+            const id = href.replace("#", "");
+            return (
+              <li key={label}>
+                <a
+                  href={href}
+                  className={`${styles.link} ${activeSection === id ? styles.active : ""}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })}
+          <li>
+            <a
+              href="mailto:gbolahan@example.com"
+              className={styles.cta}
+              onClick={() => setMenuOpen(false)}
+            >
+              Hire Me
+            </a>
+          </li>
+        </ul>
+
+        <button
+          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </nav>
+    </header>
+  );
 }
