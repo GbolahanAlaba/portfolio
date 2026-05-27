@@ -7,15 +7,17 @@
 
 .card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.5rem 1.25rem;
-  transition: border-color var(--transition), transform var(--transition);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
-  border-color: rgba(91, 214, 160, 0.2);
+  border-color: var(--border-accent);
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(16,120,80,0.1);
 }
 
 .category {
@@ -48,7 +50,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--border);
+  background: #D0D0C8;
   flex-shrink: 0;
   transition: background var(--transition);
 }
@@ -56,10 +58,5 @@
 .card:hover .item { color: var(--text-primary); }
 .card:hover .item::before { background: var(--accent); }
 
-@media (max-width: 1000px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }

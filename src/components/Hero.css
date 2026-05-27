@@ -94,7 +94,7 @@
 }
 
 .role-text {
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 .cursor-blink {
