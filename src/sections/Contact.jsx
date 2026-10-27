@@ -1,6 +1,7 @@
 import { personal, openToRoles } from "../data/portfolio";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { ArrowIcon } from "../components/Icons";
+import casual from "../assets/casual.jpg";
 import styles from "./Contact.module.css";
 
 function handleSubmit(e) {
@@ -34,9 +35,17 @@ export default function Contact() {
               message.
             </p>
 
-            <a href={`mailto:${personal.email}`} className={styles.emailBtn}>
-              {personal.email}
-              <ArrowIcon size={18} />
+            <a href={`mailto:${personal.email}`} className={styles.person}>
+              <span className={styles.avatar}>
+                <img src={casual} alt={`Photo of ${personal.name}`} width="64" height="64" loading="lazy" />
+              </span>
+              <span className={styles.personText}>
+                <span className={styles.personName}>{personal.name}</span>
+                <span className={styles.emailBtn}>
+                  {personal.email}
+                  <ArrowIcon size={16} />
+                </span>
+              </span>
             </a>
 
             <div className={styles.details}>

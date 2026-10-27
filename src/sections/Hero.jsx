@@ -1,6 +1,7 @@
 import { personal, stats, organisations, openToRoles } from "../data/portfolio";
 import { LogoMark } from "../components/Logo";
 import { ArrowIcon } from "../components/Icons";
+import portrait from "../assets/portrait.jpg";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -38,32 +39,44 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside className={styles.card} aria-label="Profile summary">
-          <div className={styles.cardHead}>
-            <LogoMark size={52} />
-            <div>
-              <p className={styles.cardName}>{personal.name}</p>
-              <p className={styles.cardTitle}>{personal.title}</p>
-            </div>
+        <div className={styles.visual}>
+          <div className={styles.photoFrame}>
+            <img
+              src={portrait}
+              alt={`Portrait of ${personal.name}`}
+              className={styles.photo}
+              width="720"
+              height="726"
+              fetchpriority="high"
+            />
           </div>
 
-          <p className={styles.cardLabel}>Open to roles as</p>
-          <div className={styles.roles}>
-            {personal.lookingFor.map((r) => (
-              <span key={r} className={styles.role}>{r}</span>
-            ))}
-          </div>
-
-          <div className={styles.stats}>
-            {stats.map(({ value, label }) => (
-              <div key={label} className={styles.stat}>
-                <span className={styles.statValue}>{value}</span>
-                <span className={styles.statLabel}>{label}</span>
+          <aside className={styles.card} aria-label="Roles I'm open to">
+            <div className={styles.cardHead}>
+              <LogoMark size={36} />
+              <div>
+                <p className={styles.cardName}>{personal.name}</p>
+                <p className={styles.cardTitle}>{personal.title}</p>
               </div>
-            ))}
-          </div>
-        </aside>
+            </div>
+            <p className={styles.cardLabel}>Open to roles as</p>
+            <div className={styles.roles}>
+              {personal.lookingFor.map((r) => (
+                <span key={r} className={styles.role}>{r}</span>
+              ))}
+            </div>
+          </aside>
+        </div>
       </div>
+
+      <dl className={styles.stats}>
+        {stats.map(({ value, label }) => (
+          <div key={label} className={styles.stat}>
+            <dt className={styles.statLabel}>{label}</dt>
+            <dd className={styles.statValue}>{value}</dd>
+          </div>
+        ))}
+      </dl>
 
       <div className={styles.orgs}>
         <p className={styles.orgsLabel}>Organisations I've built for</p>
