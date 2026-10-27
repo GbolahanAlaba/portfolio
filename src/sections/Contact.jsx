@@ -1,6 +1,6 @@
-import { personal, openToRoles } from "../data/portfolio";
+import { personal, openToRoles, whatsappLink } from "../data/portfolio";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { ArrowIcon } from "../components/Icons";
+import { ArrowIcon, LinkedinIcon, WhatsAppIcon } from "../components/Icons";
 import casual from "../assets/casual.jpg";
 import styles from "./Contact.module.css";
 
@@ -47,6 +47,17 @@ export default function Contact() {
                 </span>
               </span>
             </a>
+
+            <div className={styles.quick}>
+              <a href={whatsappLink} target="_blank" rel="noreferrer" className={`${styles.quickBtn} ${styles.wa}`}>
+                <WhatsAppIcon size={18} />
+                Chat on WhatsApp
+              </a>
+              <a href={personal.linkedin} target="_blank" rel="noreferrer" className={`${styles.quickBtn} ${styles.li}`}>
+                <LinkedinIcon size={17} />
+                View LinkedIn profile
+              </a>
+            </div>
 
             <div className={styles.details}>
               <div className={styles.detail}>

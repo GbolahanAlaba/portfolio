@@ -1,6 +1,7 @@
 import "./styles/global.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Hero from "./sections/Hero";
 import Strengths from "./sections/Strengths";
 import Projects from "./sections/Projects";
@@ -24,6 +25,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

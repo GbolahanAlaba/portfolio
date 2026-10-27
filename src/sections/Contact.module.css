@@ -20,7 +20,7 @@
   align-items: center;
   gap: 0.9rem;
   padding: 0.6rem 1.25rem 0.6rem 0.6rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   max-width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -188,3 +188,30 @@
 
 .available { align-items: flex-start; }
 .available .availDot { flex-shrink: 0; margin-top: 0.5em; }
+
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.quickBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.7rem 1.1rem;
+  border-radius: 100px;
+  color: #fff;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.quickBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.wa { background: #25D366; }
+.li { background: #0A66C2; }

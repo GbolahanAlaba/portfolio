@@ -1,0 +1,49 @@
+.fab {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 56px;
+  padding: 0 15px;
+  border-radius: 100px;
+  color: #fff;
+  background: #25D366;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35), 0 2px 6px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.visible:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Label slides out on hover (desktop only) */
+.label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: max-width 0.35s ease;
+}
+
+@media (hover: hover) {
+  .fab:hover .label,
+  .fab:focus-visible .label { max-width: 120px; padding-right: 4px; }
+}
+
+@media (max-width: 600px) {
+  .fab { right: 1rem; bottom: 1rem; height: 52px; padding: 0 13px; }
+}
