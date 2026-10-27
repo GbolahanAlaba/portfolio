@@ -3,7 +3,9 @@ export const personal = {
   title: "Tech Lead · ICT Lead · Software Engineer",
   email: "thegbolahanalaba@gmail.com",
   github: "https://github.com/GbolahanAlaba",
-  linkedin: "https://linkedin.com/in/gbolahanAlaba",
+  linkedin: "https://www.linkedin.com/in/thegbolahanalaba/",
+  // Digits only, with country code (wa.me format)
+  whatsapp: "2349092320874",
   twitter: "https://twitter.com/gbolahanAlaba",
   location: "Lagos, Nigeria",
   available: true,
@@ -164,3 +166,7 @@ export const skills = [
 // Headline roles for the hero badge and contact section, e.g. "Tech Lead, ICT Lead & Software Engineer"
 const headlineRoles = personal.lookingFor.slice(0, 4);
 export const openToRoles = `${headlineRoles.slice(0, -1).join(", ")} & ${headlineRoles.at(-1)}`;
+
+export const whatsappLink = `https://wa.me/${personal.whatsapp}?text=${encodeURIComponent(
+  "Hi Gbolahan, I found your portfolio and would like to chat."
+)}`;
