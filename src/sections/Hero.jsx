@@ -1,16 +1,7 @@
-import { personal, projects } from "../data/portfolio";
+import { personal, stats, organisations } from "../data/portfolio";
+import { LogoMark } from "../components/Logo";
+import { ArrowIcon } from "../components/Icons";
 import styles from "./Hero.module.css";
-
-const shipping = projects.filter((p) => p.featured);
-
-const CODE = [
-  ["based", `"Lagos, NG"`],
-  ["backend", `["Django", "DRF", "Celery"]`],
-  ["frontend", `["React", "Next.js", "TypeScript"]`],
-  ["payments", `["Paystack", "Flutterwave", "Paga", "+2"]`],
-  ["shipping", `[${shipping.map((p) => `"${p.title}"`).join(", ")}]`],
-  ["openToWork", String(personal.available)],
-];
 
 export default function Hero() {
   return (
@@ -20,82 +11,72 @@ export default function Hero() {
           {personal.available && (
             <div className={styles.badge}>
               <span className={styles.dot} />
-              Available for opportunities
+              Open to Tech Lead &amp; ICT Lead roles
             </div>
           )}
 
-          <h1 className={styles.name}>
-            <span className={styles.nameTop}>Gbolahan</span>
-            <span className={styles.nameBottom}>
-              Alaba<span className={styles.nameDot}>.</span>
-            </span>
+          <h1 className={styles.headline}>
+            I turn business goals into{" "}
+            <span className="serif">technology that works.</span>
           </h1>
 
-          <p className={styles.title}>{personal.title}</p>
-
-          <p className={styles.tagline}>
-            I build the systems businesses run on: payment rails, lending
-            software, commerce and media platforms. From the Django API to the{" "}
-            <em className={styles.highlight}>last pixel</em>.
+          <p className={styles.sub}>
+            I'm {personal.name}, a tech lead and engineer in {personal.location.split(",")[0]}.
+            I lead technology for growing organisations, from strategy and
+            vendor choices to the team and the code, across fintech, payments,
+            commerce and media.
           </p>
 
           <div className={styles.actions}>
-            <a href="#projects" className={styles.btnPrimary}>
-              See My Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+            <a href="#contact" className={styles.btnPrimary}>
+              Let's work together
+              <ArrowIcon />
             </a>
-            <a href="#contact" className={styles.btnSecondary}>
-              Let's Talk
+            <a href="#projects" className={styles.btnSecondary}>
+              See my work
             </a>
-          </div>
-
-          <div className={styles.liveStrip}>
-            <span className={styles.liveLabel}>Live in production:</span>
-            <div className={styles.livePills}>
-              {shipping.filter((p) => p.live).map((p) => (
-                <a key={p.title} href={p.live} target="_blank" rel="noreferrer" className={styles.livePill}>
-                  {p.title}
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                    <path d="M7 17L17 7M8 7h9v9" />
-                  </svg>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
-        <div className={styles.visual} aria-hidden="true">
-          <div className={styles.window}>
-            <div className={styles.windowBar}>
-              <span /><span /><span />
-              <p className={styles.fileName}>gbolahan.js</p>
+        <aside className={styles.card} aria-label="Profile summary">
+          <div className={styles.cardHead}>
+            <LogoMark size={52} />
+            <div>
+              <p className={styles.cardName}>{personal.name}</p>
+              <p className={styles.cardTitle}>{personal.title}</p>
             </div>
-            <pre className={styles.code}>
-              <code>
-                <span className={styles.kw}>const</span> engineer = {"{\n"}
-                {CODE.map(([key, value]) => (
-                  <span key={key}>
-                    {"  "}<span className={styles.key}>{key}</span>:{" "}
-                    <span className={value === "true" ? styles.kw : styles.str}>{value}</span>,{"\n"}
-                  </span>
-                ))}
-                {"};"}
-              </code>
-            </pre>
           </div>
-          <div className={styles.floatCard}>
-            <span className={styles.floatValue}>5</span>
-            <span className={styles.floatLabel}>payment providers<br />behind one API</span>
+
+          <p className={styles.cardLabel}>Open to roles as</p>
+          <div className={styles.roles}>
+            {personal.lookingFor.map((r) => (
+              <span key={r} className={styles.role}>{r}</span>
+            ))}
+          </div>
+
+          <div className={styles.stats}>
+            {stats.map(({ value, label }) => (
+              <div key={label} className={styles.stat}>
+                <span className={styles.statValue}>{value}</span>
+                <span className={styles.statLabel}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
+
+      <div className={styles.orgs}>
+        <p className={styles.orgsLabel}>Organisations I've built for</p>
+        <div className={styles.marquee}>
+          <div className={styles.track}>
+            {[...organisations, ...organisations].map((o, i) => (
+              <span key={i} className={styles.org} aria-hidden={i >= organisations.length}>
+                {o}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-
-      <a href="#about" className={styles.scrollHint} aria-label="Scroll to About">
-        <div className={styles.scrollLine} />
-        <span>Scroll</span>
-      </a>
     </section>
   );
 }

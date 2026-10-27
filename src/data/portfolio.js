@@ -1,6 +1,6 @@
 export const personal = {
   name: "Gbolahan Alaba",
-  title: "Full-Stack Software Engineer",
+  title: "Tech Lead · ICT Lead · Software Engineer",
   // TODO: replace with your real contact email before deploying
   email: "gbolahan@example.com",
   github: "https://github.com/GbolahanAlaba",
@@ -8,111 +8,156 @@ export const personal = {
   twitter: "https://twitter.com/gbolahanAlaba",
   location: "Lagos, Nigeria",
   available: true,
-  bio: [
-    "I'm a software engineer who builds the systems businesses run on: payment rails, lending and cooperative software, commerce platforms and media products, mostly for African markets.",
-    "Most of my work lives in the backend (Django, DRF, Celery, real-time channels, payment provider integrations), and I take it all the way to the screen with React, Next.js and TypeScript, including installable PWAs and desktop apps.",
-    "I believe technology is a catalyst for positive change. Tools that help a cooperative track its members' savings, or let a small merchant get paid reliably, move us closer to the UN Sustainable Development Goals. That's the work I want to keep doing.",
-  ],
+  lookingFor: ["Tech Lead", "ICT Lead", "Head of Technology", "Engineering Manager"],
 };
 
 export const stats = [
   { value: "7", label: "Products shipped" },
+  { value: "6", label: "Organisations served" },
   { value: "5", label: "Payment providers integrated" },
   { value: "3,000+", label: "Commits since 2024" },
-  { value: "4", label: "Platforms: API, web, PWA, desktop" },
 ];
 
-export const skills = [
-  { category: "Backend", items: ["Python", "Django", "Django REST Framework", "Celery", "Django Channels", "Node.js"] },
-  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "TanStack Query", "PWAs"] },
-  { category: "Payments", items: ["Paystack", "Flutterwave", "Paga", "Nomba", "PayPal"] },
-  { category: "Data", items: ["PostgreSQL", "SQLite", "Supabase", "Contentful"] },
-  { category: "Infra & Tools", items: ["Docker", "AWS", "Vercel", "Electron", "Claude API", "Git"] },
+// Shown in the "built for" strip
+export const organisations = ["Expedier", "Synchgate", "Ajiroba", "iGospel", "Entacrest", "SkyTrack ICT"];
+
+export const strengths = [
+  {
+    title: "Technology leadership",
+    text: "I set the technical direction, turn business goals into a plan the team can deliver, and stay accountable from the first meeting to launch and beyond.",
+    size: "large",
+  },
+  {
+    title: "ICT strategy & digital transformation",
+    text: "Moving organisations off tools that hold them back. SkyTrack ICT went from WordPress to a fast site that takes payments and bookings online.",
+  },
+  {
+    title: "The bridge between business and tech",
+    text: "I speak both languages, so founders, operations and engineers agree on what's being built and why.",
+  },
+  {
+    title: "Payments & fintech systems",
+    text: "Five payment providers behind one API at Synchgate, plus lending and cooperative software for multi-branch organisations.",
+  },
+  {
+    title: "Delivery across every platform",
+    text: "Web, installable mobile apps, desktop software and APIs, planned and shipped as one coherent product.",
+  },
+  {
+    title: "Still hands-on",
+    text: "I write production code in Django, React and Next.js, which means my plans are grounded in what's actually buildable.",
+    size: "wide",
+  },
+];
+
+export const approach = [
+  { title: "Understand the business", text: "Start with the goal, the users and the constraints, not the tech." },
+  { title: "Plan & choose wisely", text: "Scope the work, pick tools and vendors, and agree on milestones everyone can see." },
+  { title: "Build with the team", text: "Ship in small, visible steps, unblock people, and keep quality high." },
+  { title: "Launch & support", text: "Go live, watch how it's used, and keep improving after day one." },
 ];
 
 export const projects = [
   {
     title: "Synchgate",
     domain: "Payments",
-    role: "Backend + frontend",
+    role: "Lead engineer",
     year: "2026",
     description:
-      "\"The gateway to gateways\": one API over Paystack, Flutterwave, Paga, Nomba and PayPal, with provider routing, a billing engine, invoicing, payroll, POS and compliance modules. I also built the invoicing web app on top of it.",
-    tech: ["Django", "DRF", "Celery", "Docker", "AWS", "React", "TypeScript"],
+      "\"The gateway to gateways\": one platform that connects businesses to Paystack, Flutterwave, Paga, Nomba and PayPal, with billing, invoicing, payroll, POS and compliance built in. I built the platform and its invoicing web app.",
+    tech: ["Django", "Celery", "AWS", "React", "TypeScript"],
     live: "https://www.synchgate.com",
     featured: true,
   },
   {
     title: "Ajiroba",
     domain: "Commerce",
-    role: "Backend",
+    role: "Lead backend engineer",
     year: "2024 – now",
     description:
-      "An e-commerce platform with live product auctions, bidding and raffle draws on top of a regular storefront. Real-time bids run over WebSockets, scheduled draws on Celery, and checkout on Paystack.",
-    tech: ["Django", "DRF", "Channels", "Celery", "Paystack", "Docker"],
+      "An online marketplace with live auctions, bidding and raffle draws alongside a regular storefront, with real-time bidding and Paystack checkout. I've owned the backend since 2024.",
+    tech: ["Django", "Channels", "Celery", "Paystack"],
     live: "https://www.ajiroba.com",
     featured: true,
   },
   {
     title: "iGospel",
     domain: "Media",
-    role: "Full-stack",
+    role: "Technical lead",
     year: "2025 – now",
     description:
-      "A gospel music and media platform: music catalogue and charts, artist and ministry pages, a blog and an in-app wallet. A Django API serves a Next.js frontend, with AI-assisted post writing on Claude and SEO built in.",
-    tech: ["Django", "DRF", "Celery", "Next.js", "TypeScript", "Claude API"],
+      "A gospel music and media platform with a music catalogue and charts, ministry pages, a blog and an in-app wallet. I designed the API and co-built the web app, including AI-assisted publishing and search visibility.",
+    tech: ["Django", "Next.js", "TypeScript", "Claude API"],
     live: "https://igospel.ng",
     featured: true,
   },
   {
+    title: "Expedier",
+    domain: "Fintech",
+    role: "Backend engineer",
+    year: "1.5 years",
+    description:
+      "I was on the team that built Expedier's B2B web platform, and I supported maintenance of its B2C mobile app platform.",
+    tech: [],
+    live: "https://expedier.co",
+    featured: false,
+  },
+  {
     title: "EMS",
     domain: "Fintech",
-    role: "Full-stack",
+    role: "Lead engineer",
     year: "2026",
     description:
-      "Cooperative, thrift and loan management for multi-branch lenders. A back office for head office and branches, an offline-first PWA for field officers, and a Windows desktop installer, all from one codebase.",
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "SQLite", "Electron"],
+      "Cooperative, thrift and loan management for multi-branch lenders: a back office for head office and branches, an offline app for field officers, and a desktop installer, all from one product.",
+    tech: ["React", "TypeScript", "Node.js", "Electron"],
     live: null,
     featured: false,
   },
   {
     title: "SkyTrack ICT",
-    domain: "Web",
-    role: "Frontend",
+    domain: "Digital transformation",
+    role: "Lead developer",
     year: "2026",
     description:
-      "Rebuilt skytrackict.com.ng off WordPress as a fast React app covering testing centre services, exam-prep training, coworking and room bookings, with Paystack checkout and Contentful as the content store.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Contentful", "Paystack"],
+      "Took skytrackict.com.ng off WordPress and onto a fast modern site covering testing centre services, training, coworking and room bookings, with online payments and easy content editing.",
+    tech: ["React", "TypeScript", "Contentful", "Paystack"],
     live: "https://www.skytrackict.com.ng",
-    featured: false,
-  },
-  {
-    title: "Expedier",
-    domain: "Fintech",
-    role: "Backend Engineer",
-    year: "1.5 years",
-    description:
-      "Worked as a backend engineer at Expedier for a year and a half. I was on the team that built the company's B2B web platform, and I supported maintenance of its B2C mobile app platform.",
-    tech: [],
-    live: "https://expedier.co",
     featured: false,
   },
 ];
 
-export const timeline = [
+export const experience = [
   {
-    year: "2024",
-    title: "Started Ajiroba",
-    text: "Took on the backend for an auctions-and-commerce platform. Still shipping to it today, with 2,000+ commits so far.",
+    role: "Lead Engineer & Technology Partner",
+    org: "Client and product work",
+    period: "2024 – now",
+    points: [
+      "Led technology for Synchgate, Ajiroba, iGospel, EMS and SkyTrack ICT, from planning with business owners to launch and ongoing support.",
+      "Chose and integrated vendors and providers across payments, content and hosting.",
+    ],
   },
   {
-    year: "2025",
-    title: "Built iGospel end to end",
-    text: "Designed the Django API and co-built the Next.js frontend for a gospel music and media platform.",
+    role: "Backend Engineer",
+    org: "Expedier",
+    period: "1 yr 6 mos",
+    points: [
+      "Part of the team that built the B2B web platform.",
+      "Supported maintenance of the B2C mobile app platform.",
+    ],
+  },
+];
+
+export const skills = [
+  {
+    category: "Leadership",
+    items: ["Technical leadership", "ICT strategy", "Digital transformation", "Project delivery", "Stakeholder communication", "Vendor & integration management"],
   },
   {
-    year: "2026",
-    title: "Went deep on payments and fintech",
-    text: "Built Synchgate's multi-provider payment gateway and its invoicing app, then EMS for cooperatives and lenders.",
+    category: "Engineering",
+    items: ["Python", "Django", "Celery", "Node.js", "React", "Next.js", "TypeScript", "PostgreSQL"],
+  },
+  {
+    category: "Platforms & Tools",
+    items: ["Paystack", "Flutterwave", "Paga", "AWS", "Docker", "Vercel", "Electron", "Claude API"],
   },
 ];

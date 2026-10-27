@@ -19,10 +19,12 @@
   --accent-glow: rgba(16, 120, 80, 0.10);
   --accent-light: #E8F5EE;
   --on-accent: #FFFFFF;
+  --accent-bright: #4AC491;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
-  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --font-display: 'Geist', 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -57,6 +59,7 @@
     --accent-glow: rgba(74, 196, 145, 0.12);
     --accent-light: rgba(74, 196, 145, 0.12);
     --on-accent: #08170F;
+    --accent-bright: #107850;
 
     --shadow-sm: 0 0 0 1px rgba(255,255,255,0.04);
     --shadow-md: 0 6px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
@@ -121,7 +124,7 @@ img {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -184,8 +187,9 @@ section {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 700;
+  font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+  letter-spacing: -0.035em;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--text-primary);
   margin-bottom: 1.2rem;
@@ -212,4 +216,21 @@ section {
     transition-delay: 0s !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* Serif italic accent for a word or two inside sans headings */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent-warm);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
