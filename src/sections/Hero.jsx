@@ -1,11 +1,22 @@
-import { personal, sdgGoals } from "../data/portfolio";
+import { personal, projects } from "../data/portfolio";
 import styles from "./Hero.module.css";
+
+const shipping = projects.filter((p) => p.featured);
+
+const CODE = [
+  ["based", `"Lagos, NG"`],
+  ["backend", `["Django", "DRF", "Celery"]`],
+  ["frontend", `["React", "Next.js", "TypeScript"]`],
+  ["payments", `["Paystack", "Flutterwave", "Paga", "+2"]`],
+  ["shipping", `[${shipping.map((p) => `"${p.title}"`).join(", ")}]`],
+  ["openToWork", String(personal.available)],
+];
 
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.grid}>
-        <div className={`container ${styles.content}`}>
+        <div className={styles.content}>
           {personal.available && (
             <div className={styles.badge}>
               <span className={styles.dot} />
@@ -23,15 +34,15 @@ export default function Hero() {
           <p className={styles.title}>{personal.title}</p>
 
           <p className={styles.tagline}>
-            Technology as a catalyst for{" "}
-            <em className={styles.highlight}>positive change</em> — building
-            solutions aligned with the UN Sustainable Development Goals.
+            I build the systems businesses run on: payment rails, lending
+            software, commerce and media platforms. From the Django API to the{" "}
+            <em className={styles.highlight}>last pixel</em>.
           </p>
 
           <div className={styles.actions}>
             <a href="#projects" className={styles.btnPrimary}>
-              View My Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              See My Work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
@@ -40,58 +51,51 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className={styles.sdgStrip}>
-            <span className={styles.sdgLabel}>Focused on:</span>
-            <div className={styles.sdgPills}>
-              {sdgGoals.map((g) => (
-                <span
-                  key={g.number}
-                  className={styles.sdgPill}
-                  style={{ borderColor: g.color, color: g.color }}
-                >
-                  SDG {g.number}
-                </span>
+          <div className={styles.liveStrip}>
+            <span className={styles.liveLabel}>Live in production:</span>
+            <div className={styles.livePills}>
+              {shipping.filter((p) => p.live).map((p) => (
+                <a key={p.title} href={p.live} target="_blank" rel="noreferrer" className={styles.livePill}>
+                  {p.title}
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path d="M7 17L17 7M8 7h9v9" />
+                  </svg>
+                </a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className={styles.visual}>
-          <div className={styles.orbOuter}>
-            <div className={styles.orbInner}>
-              <span className={styles.orbInitials}>GA</span>
+        <div className={styles.visual} aria-hidden="true">
+          <div className={styles.window}>
+            <div className={styles.windowBar}>
+              <span /><span /><span />
+              <p className={styles.fileName}>gbolahan.js</p>
             </div>
-            <div className={styles.orbRing1} />
-            <div className={styles.orbRing2} />
-
-            {sdgGoals.slice(0, 6).map((g, i) => {
-              const angle = (i / 6) * 2 * Math.PI - Math.PI / 2;
-              const r = 148;
-              const x = 50 + (r / 2) * Math.cos(angle);
-              const y = 50 + (r / 2) * Math.sin(angle);
-              return (
-                <div
-                  key={g.number}
-                  className={styles.floatBadge}
-                  style={{
-                    left: `${x}%`,
-                    top: `${y}%`,
-                    borderColor: g.color,
-                    animationDelay: `${i * 0.4}s`,
-                  }}
-                >
-                  <span style={{ color: g.color }}>#{g.number}</span>
-                </div>
-              );
-            })}
+            <pre className={styles.code}>
+              <code>
+                <span className={styles.kw}>const</span> engineer = {"{\n"}
+                {CODE.map(([key, value]) => (
+                  <span key={key}>
+                    {"  "}<span className={styles.key}>{key}</span>:{" "}
+                    <span className={value === "true" ? styles.kw : styles.str}>{value}</span>,{"\n"}
+                  </span>
+                ))}
+                {"};"}
+              </code>
+            </pre>
+          </div>
+          <div className={styles.floatCard}>
+            <span className={styles.floatValue}>5</span>
+            <span className={styles.floatLabel}>payment providers<br />behind one API</span>
           </div>
         </div>
       </div>
 
-      <div className={styles.scrollHint}>
+      <a href="#about" className={styles.scrollHint} aria-label="Scroll to About">
         <div className={styles.scrollLine} />
         <span>Scroll</span>
-      </div>
+      </a>
     </section>
   );
 }

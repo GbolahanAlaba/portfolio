@@ -114,13 +114,13 @@
   gap: 0.5rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent);
   border: none;
   padding: 0.85rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(16,120,80,0.25);
+  box-shadow: var(--shadow-accent);
   transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
   width: 100%;
 }
@@ -128,9 +128,18 @@
 .submit:hover {
   opacity: 0.88;
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(16,120,80,0.35);
+  box-shadow: var(--shadow-accent);
 }
 
 @media (max-width: 800px) {
   .wrapper { grid-template-columns: 1fr; gap: 3rem; }
 }
+
+.note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+.emailBtn { overflow-wrap: anywhere; }

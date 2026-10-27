@@ -8,13 +8,13 @@ export default function Footer() {
         <div className={styles.left}>
           <span className={styles.logo}>GA<span className={styles.dot}>.</span></span>
           <p className={styles.copy}>
-            © {new Date().getFullYear()} Gbolahan Alaba. Crafted with intention.
+            © {new Date().getFullYear()} {personal.name}. Built with React and Vite.
           </p>
         </div>
         <div className={styles.links}>
-          <a href={personal.github} target="_blank" rel="noreferrer">GitHub</a>
-          <a href={personal.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={personal.twitter} target="_blank" rel="noreferrer">Twitter</a>
+          {personal.github && <a href={personal.github} target="_blank" rel="noreferrer">GitHub</a>}
+          {personal.linkedin && <a href={personal.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>}
+          {personal.twitter && <a href={personal.twitter} target="_blank" rel="noreferrer">X / Twitter</a>}
           <a href={`mailto:${personal.email}`}>Email</a>
         </div>
       </div>

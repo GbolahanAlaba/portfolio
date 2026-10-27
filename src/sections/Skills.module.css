@@ -17,7 +17,7 @@
 .card:hover {
   border-color: var(--border-accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(16,120,80,0.1);
+  box-shadow: var(--shadow-accent);
 }
 
 .category {
@@ -50,13 +50,14 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #D0D0C8;
+  background: var(--text-muted);
+  opacity: 0.5;
   flex-shrink: 0;
   transition: background var(--transition);
 }
 
 .card:hover .item { color: var(--text-primary); }
-.card:hover .item::before { background: var(--accent); }
+.card:hover .item::before { background: var(--accent); opacity: 1; }
 
 @media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }

@@ -34,7 +34,9 @@ export function useActiveSection(sectionIds) {
           }
         });
       },
-      { threshold: 0.4 }
+      // A section is "active" while it crosses the middle of the viewport,
+      // which works for sections taller than the screen too.
+      { rootMargin: "-45% 0px -50% 0px" }
     );
 
     sectionIds.forEach((id) => {

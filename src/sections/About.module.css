@@ -46,7 +46,7 @@
 .socialLink:hover {
   color: var(--accent);
   border-color: var(--border-accent);
-  box-shadow: 0 2px 10px rgba(16,120,80,0.12);
+  box-shadow: var(--shadow-accent);
 }
 
 .statsGrid {
@@ -70,7 +70,7 @@
 
 .statCard:hover {
   border-color: var(--border-accent);
-  box-shadow: 0 4px 16px rgba(16,120,80,0.1);
+  box-shadow: var(--shadow-accent);
 }
 
 .statValue {

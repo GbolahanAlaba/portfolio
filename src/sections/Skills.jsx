@@ -12,7 +12,7 @@ export default function Skills() {
           <p className="section-label">Skills</p>
           <h2 className="section-title">Technical Arsenal</h2>
           <p className="section-subtitle">
-            A full-stack toolkit honed through real-world impact-driven engineering across the African tech ecosystem.
+            The tools behind the products above. Every item here has run in production.
           </p>
         </div>
 

@@ -1,6 +1,16 @@
 import { personal } from "../data/portfolio";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { ArrowIcon } from "../components/Icons";
 import styles from "./Contact.module.css";
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = new FormData(e.currentTarget);
+  const subject = `Hello from ${form.get("name")}`;
+  const body = `${form.get("message")}\n\n${form.get("name")}\n${form.get("email")}`;
+  window.location.href =
+    `mailto:${personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export default function Contact() {
   const { ref, isVisible } = useScrollReveal();
@@ -19,15 +29,13 @@ export default function Contact() {
               <em className={styles.em}>meaningful</em>.
             </h2>
             <p className={styles.sub}>
-              Whether you have a project aligned with the SDGs, a collaboration idea,
-              or simply want to connect — my inbox is always open.
+              Need a payment integration, a backend that scales, or a product
+              taken from idea to launch? Tell me about it. I read every message.
             </p>
 
             <a href={`mailto:${personal.email}`} className={styles.emailBtn}>
               {personal.email}
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <ArrowIcon size={18} />
             </a>
 
             <div className={styles.details}>
@@ -35,47 +43,51 @@ export default function Contact() {
                 <span className={styles.detailLabel}>Location</span>
                 <span className={styles.detailValue}>{personal.location}</span>
               </div>
-              <div className={styles.detail}>
-                <span className={styles.detailLabel}>Availability</span>
-                <span className={`${styles.detailValue} ${styles.available}`}>
-                  <span className={styles.availDot} />
-                  Open to opportunities
-                </span>
-              </div>
+              {personal.available && (
+                <div className={styles.detail}>
+                  <span className={styles.detailLabel}>Availability</span>
+                  <span className={`${styles.detailValue} ${styles.available}`}>
+                    <span className={styles.availDot} />
+                    Open to opportunities
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
           <div className={`reveal ${isVisible ? "visible" : ""} reveal-delay-2 ${styles.card}`}>
             <p className={styles.cardLabel}>Quick Message</p>
-            <form
-              className={styles.form}
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.location.href = `mailto:${personal.email}`;
-              }}
-            >
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label className={styles.label}>Name</label>
+                <label htmlFor="contact-name" className={styles.label}>Name</label>
                 <input
+                  id="contact-name"
+                  name="name"
                   type="text"
+                  autoComplete="name"
                   placeholder="Your name"
                   className={styles.input}
                   required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label className={styles.label}>Email</label>
+                <label htmlFor="contact-email" className={styles.label}>Email</label>
                 <input
+                  id="contact-email"
+                  name="email"
                   type="email"
+                  autoComplete="email"
                   placeholder="your@email.com"
                   className={styles.input}
                   required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label className={styles.label}>Message</label>
+                <label htmlFor="contact-message" className={styles.label}>Message</label>
                 <textarea
-                  rows={4}
+                  id="contact-message"
+                  name="message"
+                  rows={5}
                   placeholder="Tell me about your project or idea..."
                   className={styles.textarea}
                   required
@@ -83,10 +95,11 @@ export default function Contact() {
               </div>
               <button type="submit" className={styles.submit}>
                 Send Message
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                 </svg>
               </button>
+              <p className={styles.note}>Opens your email app with the message filled in.</p>
             </form>
           </div>
         </div>

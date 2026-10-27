@@ -1,16 +1,30 @@
-# React + Vite
+# Gbolahan Alaba — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site, built with React 18 and Vite. Light and dark themes follow the visitor's system setting.
 
-Currently, two official plugins are available:
+## Run it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev       # local dev server
+npm run build     # production build in dist/
+npm run preview   # serve the production build
+```
 
-## React Compiler
+## Editing content
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All copy lives in [`src/data/portfolio.js`](src/data/portfolio.js): contact details, bio, stats, projects, the journey timeline and skills. The sections read from it, so most updates don't touch any component.
 
-## Expanding the ESLint configuration
+- **Projects**: set `live` to a URL to show a "Visit" link, or `null` for private builds. Add `github` to show a repo icon. `featured: true` gives the card an accent bar and puts the project in the hero's "Live in production" strip.
+- **Contact**: `email` is used by the hero, navbar, contact section and footer.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Structure
+
+```
+src/
+  data/portfolio.js     content
+  sections/             Hero, About, Projects, Journey, Skills, Contact
+  components/           Navbar, Footer, shared Icons
+  hooks/                scroll reveal + active-section tracking
+  styles/global.css     theme tokens (light/dark), base styles
+```
