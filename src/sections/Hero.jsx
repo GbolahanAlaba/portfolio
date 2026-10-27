@@ -1,4 +1,4 @@
-import { personal, stats, organisations } from "../data/portfolio";
+import { personal, stats, organisations, openToRoles } from "../data/portfolio";
 import { LogoMark } from "../components/Logo";
 import { ArrowIcon } from "../components/Icons";
 import styles from "./Hero.module.css";
@@ -11,7 +11,7 @@ export default function Hero() {
           {personal.available && (
             <div className={styles.badge}>
               <span className={styles.dot} />
-              Open to Tech Lead &amp; ICT Lead roles
+              Open to {openToRoles} roles
             </div>
           )}
 

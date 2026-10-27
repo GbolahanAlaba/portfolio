@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { personal } from "../data/portfolio";
 import { useActiveSection } from "../hooks/useScrollReveal";
+import Logo from "./Logo";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
   { label: "About", id: "about" },
   { label: "Work", id: "projects" },
-  { label: "Journey", id: "journey" },
-  { label: "Skills", id: "skills" },
+  { label: "Approach", id: "approach" },
+  { label: "Experience", id: "experience" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -38,10 +39,9 @@ export default function Navbar() {
 
   return (
     <header className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ""}`}>
-      <nav className={`container ${styles.nav}`} aria-label="Main">
+      <nav className={styles.nav} aria-label="Main">
         <a href="#hero" className={styles.logo} aria-label="Gbolahan Alaba, back to top">
-          <span className={styles.logoInitials}>GA</span>
-          <span className={styles.logoDot} />
+          <Logo />
         </a>
 
         <ul id="nav-menu" className={`${styles.links} ${menuOpen ? styles.open : ""}`}>

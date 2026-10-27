@@ -275,6 +275,8 @@
 
 @media (max-width: 600px) {
   .hero { padding-top: 7.5rem; }
+  .badge { border-radius: var(--radius-md); align-items: flex-start; line-height: 1.45; }
+  .dot { flex-shrink: 0; margin-top: 0.4em; }
   .grid, .orgs { padding: 0 1.25rem; }
   .org { font-size: 1.2rem; padding: 0 1.5rem; }
 }

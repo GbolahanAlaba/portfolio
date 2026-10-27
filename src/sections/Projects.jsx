@@ -9,12 +9,16 @@ export default function Projects() {
   return (
     <section id="projects" ref={ref}>
       <div className="container">
-        <div className={`reveal ${isVisible ? "visible" : ""}`}>
-          <p className="section-label">Selected Work</p>
-          <h2 className="section-title">Products in production</h2>
+        <div className={`section-head reveal ${isVisible ? "visible" : ""}`}>
+          <div>
+            <p className="section-label">Selected work</p>
+            <h2 className="section-title">
+              Products I've <span className="serif">led and built.</span>
+            </h2>
+          </div>
           <p className="section-subtitle">
-            Real platforms with real users and real money moving through them.
-            Here's what I built on each.
+            Real platforms with real users and real money moving through them,
+            and what I was responsible for on each.
           </p>
         </div>
 

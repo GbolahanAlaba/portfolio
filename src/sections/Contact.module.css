@@ -6,10 +6,6 @@
   margin-top: 3rem;
 }
 
-.em {
-  font-style: italic;
-  color: var(--accent-warm);
-}
 
 .sub {
   color: var(--text-secondary);
@@ -87,7 +83,7 @@
 .textarea {
   background: var(--bg-subtle);
   border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -118,7 +114,7 @@
   background: var(--accent);
   border: none;
   padding: 0.85rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   cursor: pointer;
   box-shadow: var(--shadow-accent);
   transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);

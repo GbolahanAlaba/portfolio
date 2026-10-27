@@ -1,63 +1,57 @@
-.grid {
+.groups {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.group {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  margin-top: 3.5rem;
-}
-
-.card {
-  background: var(--bg-card);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1.25rem;
-  box-shadow: var(--shadow-sm);
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-accent);
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .category {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding-top: 0.5rem;
 }
+
+.lead .category { color: var(--accent); }
 
 .items {
   display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .item {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color var(--transition);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  transition: color var(--transition), border-color var(--transition);
 }
 
-.item::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  opacity: 0.5;
-  flex-shrink: 0;
-  transition: background var(--transition);
+.item:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
 }
 
-.card:hover .item { color: var(--text-primary); }
-.card:hover .item::before { background: var(--accent); opacity: 1; }
+.lead .item {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-color: var(--border-accent);
+}
 
-@media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+  .group { grid-template-columns: 1fr; gap: 0.9rem; }
+  .category { padding-top: 0; }
+}

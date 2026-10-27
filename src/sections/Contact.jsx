@@ -1,4 +1,4 @@
-import { personal } from "../data/portfolio";
+import { personal, openToRoles } from "../data/portfolio";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { ArrowIcon } from "../components/Icons";
 import styles from "./Contact.module.css";
@@ -25,12 +25,13 @@ export default function Contact() {
         <div className={styles.wrapper}>
           <div className={`reveal ${isVisible ? "visible" : ""} reveal-delay-1`}>
             <h2 className={`section-title ${styles.title}`}>
-              Let's build something{" "}
-              <em className={styles.em}>meaningful</em>.
+              Need someone to own your{" "}
+              <span className="serif">technology?</span>
             </h2>
             <p className={styles.sub}>
-              Need a payment integration, a backend that scales, or a product
-              taken from idea to launch? Tell me about it. I read every message.
+              Whether you're hiring a tech lead, ICT lead or backend engineer, or need someone to
+              take a product from idea to launch, tell me about it. I read every
+              message.
             </p>
 
             <a href={`mailto:${personal.email}`} className={styles.emailBtn}>
@@ -48,7 +49,7 @@ export default function Contact() {
                   <span className={styles.detailLabel}>Availability</span>
                   <span className={`${styles.detailValue} ${styles.available}`}>
                     <span className={styles.availDot} />
-                    Open to opportunities
+                    Open to {openToRoles} roles
                   </span>
                 </div>
               )}

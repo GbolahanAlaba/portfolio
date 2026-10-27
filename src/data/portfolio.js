@@ -1,14 +1,13 @@
 export const personal = {
   name: "Gbolahan Alaba",
   title: "Tech Lead · ICT Lead · Software Engineer",
-  // TODO: replace with your real contact email before deploying
-  email: "gbolahan@example.com",
+  email: "thegbolahanalaba@gmail.com",
   github: "https://github.com/GbolahanAlaba",
   linkedin: "https://linkedin.com/in/gbolahanAlaba",
   twitter: "https://twitter.com/gbolahanAlaba",
   location: "Lagos, Nigeria",
   available: true,
-  lookingFor: ["Tech Lead", "ICT Lead", "Head of Technology", "Engineering Manager"],
+  lookingFor: ["Tech Lead", "ICT Lead", "Backend Developer", "Software Engineer", "Head of Technology", "Engineering Manager"],
 };
 
 export const stats = [
@@ -161,3 +160,7 @@ export const skills = [
     items: ["Paystack", "Flutterwave", "Paga", "AWS", "Docker", "Vercel", "Electron", "Claude API"],
   },
 ];
+
+// Headline roles for the hero badge and contact section, e.g. "Tech Lead, ICT Lead & Software Engineer"
+const headlineRoles = personal.lookingFor.slice(0, 4);
+export const openToRoles = `${headlineRoles.slice(0, -1).join(", ")} & ${headlineRoles.at(-1)}`;

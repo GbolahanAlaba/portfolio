@@ -2,9 +2,10 @@ import "./styles/global.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
+import Strengths from "./sections/Strengths";
 import Projects from "./sections/Projects";
-import Journey from "./sections/Journey";
+import Approach from "./sections/Approach";
+import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
 
@@ -15,9 +16,10 @@ export default function App() {
       <Navbar />
       <main id="main">
         <Hero />
-        <About />
+        <Strengths />
         <Projects />
-        <Journey />
+        <Approach />
+        <Experience />
         <Skills />
         <Contact />
       </main>

@@ -10,18 +10,17 @@ export default function Skills() {
       <div className="container">
         <div className={`reveal ${isVisible ? "visible" : ""}`}>
           <p className="section-label">Skills</p>
-          <h2 className="section-title">Technical Arsenal</h2>
-          <p className="section-subtitle">
-            The tools behind the products above. Every item here has run in production.
-          </p>
+          <h2 className="section-title">
+            Leadership, backed by <span className="serif">real engineering.</span>
+          </h2>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.groups}>
           {skills.map((group, i) => (
             <div
               key={group.category}
-              className={`${styles.card} reveal ${isVisible ? "visible" : ""}`}
-              style={{ transitionDelay: `${0.1 + i * 0.08}s` }}
+              className={`${styles.group} ${i === 0 ? styles.lead : ""} reveal ${isVisible ? "visible" : ""}`}
+              style={{ transitionDelay: `${0.1 + i * 0.1}s` }}
             >
               <p className={styles.category}>{group.category}</p>
               <div className={styles.items}>

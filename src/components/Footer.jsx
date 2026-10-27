@@ -1,4 +1,5 @@
 import { personal } from "../data/portfolio";
+import Logo from "./Logo";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
-          <span className={styles.logo}>GA<span className={styles.dot}>.</span></span>
+          <Logo />
           <p className={styles.copy}>
             © {new Date().getFullYear()} {personal.name}. Built with React and Vite.
           </p>
