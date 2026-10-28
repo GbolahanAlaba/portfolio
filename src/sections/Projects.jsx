@@ -45,7 +45,7 @@ function ProjectCard({ project, delay, isVisible }) {
     >
       <div className={styles.cardTop}>
         <span className={styles.domain}>{project.domain}</span>
-        <span className={styles.year}>{project.year}</span>
+        {project.year && <span className={styles.year}>{project.year}</span>}
       </div>
 
       <h3 className={styles.title}>{project.title}</h3>

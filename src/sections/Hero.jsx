@@ -17,15 +17,15 @@ export default function Hero() {
           )}
 
           <h1 className={styles.headline}>
-            I turn business goals into{" "}
-            <span className="serif">technology that works.</span>
+            I build technology that helps African businesses{" "}
+            <span className="serif">run efficiently and transact with ease.</span>
           </h1>
 
           <p className={styles.sub}>
             I'm {personal.name}, a tech lead and engineer in {personal.location.split(",")[0]}.
-            I lead technology for growing organisations, from strategy and
-            vendor choices to the team and the code, across fintech, payments,
-            commerce and media.
+            I lead products from strategy and vendor choices to the team and
+            the code, across payments, fintech, commerce and community
+            platforms.
           </p>
 
           <div className={styles.actions}>
@@ -46,6 +46,9 @@ export default function Hero() {
               title="LinkedIn"
             >
               <LinkedinIcon size={18} />
+            </a>
+            <a href={personal.cv} download className={styles.btnText}>
+              Download CV
             </a>
           </div>
         </div>

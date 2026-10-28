@@ -57,6 +57,10 @@ export default function Contact() {
                 <LinkedinIcon size={17} />
                 View LinkedIn profile
               </a>
+              <a href={personal.cv} download className={`${styles.quickBtn} ${styles.cv}`}>
+                <ArrowIcon size={16} />
+                Download CV
+              </a>
             </div>
 
             <div className={styles.details}>

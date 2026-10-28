@@ -215,3 +215,5 @@
 
 .wa { background: #25D366; }
 .li { background: #0A66C2; }
+.cv { background: var(--text-primary); color: var(--bg); }
+.cv svg { transform: rotate(90deg); }

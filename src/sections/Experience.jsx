@@ -1,4 +1,4 @@
-import { experience } from "../data/portfolio";
+import { experience, education } from "../data/portfolio";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import styles from "./Experience.module.css";
 
@@ -32,6 +32,18 @@ export default function Experience() {
               </ul>
             </article>
           ))}
+        </div>
+
+        <div className={`${styles.education} reveal ${isVisible ? "visible" : ""}`}>
+          <p className={styles.eduLabel}>Education & certification</p>
+          <ul className={styles.eduList}>
+            {education.map((e) => (
+              <li key={e.title}>
+                <span className={styles.eduTitle}>{e.title}</span>
+                <span className={styles.eduOrg}>{e.org}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

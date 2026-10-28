@@ -152,5 +152,9 @@
   background: var(--accent-light);
 }
 
+/* A lone card in the last row stretches across it instead of leaving gaps */
+@media (min-width: 901px) { .card:last-child:nth-child(3n + 1) { grid-column: 1 / -1; } }
+@media (max-width: 900px) and (min-width: 581px) { .card:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+
 @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .grid { grid-template-columns: 1fr; } }

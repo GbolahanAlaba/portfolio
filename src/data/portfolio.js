@@ -6,21 +6,22 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/thegbolahanalaba/",
   // Digits only, with country code (wa.me format)
   whatsapp: "2349092320874",
-  twitter: "https://twitter.com/gbolahanAlaba",
+  instagram: "https://www.instagram.com/thegbolahanalaba/",
+  cv: "/Gbolahan-Alaba-CV.pdf",
   location: "Lagos, Nigeria",
   available: true,
   lookingFor: ["Tech Lead", "ICT Lead", "Backend Developer", "Software Engineer", "Head of Technology", "Engineering Manager"],
 };
 
 export const stats = [
-  { value: "7", label: "Products shipped" },
-  { value: "6", label: "Organisations served" },
-  { value: "5", label: "Payment providers integrated" },
+  { value: "8", label: "Products shipped" },
+  { value: "10", label: "Organisations served" },
+  { value: "10+", label: "Third-party APIs integrated" },
   { value: "3,000+", label: "Commits since 2024" },
 ];
 
 // Shown in the "built for" strip
-export const organisations = ["Expedier", "Synchgate", "Ajiroba", "iGospel", "Entacrest", "SkyTrack ICT"];
+export const organisations = ["Expedier", "Synchgate", "Titaar", "Ajiroba", "Holdbodi", "Entacrest", "SkyTrack ICT", "AMIS", "SoftAmos Global", "Nigerian Breweries"];
 
 export const strengths = [
   {
@@ -38,7 +39,7 @@ export const strengths = [
   },
   {
     title: "Payments & fintech systems",
-    text: "Five payment providers behind one API at Synchgate, plus lending and cooperative software for multi-branch organisations.",
+    text: "Five payment providers behind one API at Synchgate, plus KYC, gift cards, SMS, email and statement generation, and lending software for multi-branch organisations.",
   },
   {
     title: "Delivery across every platform",
@@ -71,6 +72,17 @@ export const projects = [
     featured: true,
   },
   {
+    title: "Titaar",
+    domain: "Creator commerce",
+    role: "Lead engineer",
+    year: null,
+    description:
+      "A sales engine for creators and businesses to sell books, courses, services, digital downloads and physical goods, with personal storefronts, a discovery marketplace, cross-border checkout and an affiliate program. I was the lead engineer on the team that built it.",
+    tech: [],
+    live: "https://titaar.com",
+    featured: true,
+  },
+  {
     title: "Ajiroba",
     domain: "Commerce",
     role: "Lead backend engineer",
@@ -82,14 +94,14 @@ export const projects = [
     featured: true,
   },
   {
-    title: "iGospel",
-    domain: "Media",
-    role: "Technical lead",
-    year: "2025 – now",
+    title: "Holdbodi",
+    domain: "Nonprofit",
+    role: "Lead engineer",
+    year: "2026",
     description:
-      "A gospel music and media platform with a music catalogue and charts, ministry pages, a blog and an in-app wallet. I designed the API and co-built the web app, including AI-assisted publishing and search visibility.",
-    tech: ["Django", "Next.js", "TypeScript", "Claude API"],
-    live: "https://igospel.ng",
+      "A community support platform that brings individuals, brands and volunteers together to fight food insecurity. Donors give to initiatives through Paystack, volunteers and partners sign up online, and live impact numbers show where the help goes. I built the API and the website.",
+    tech: ["Django", "Celery", "React", "TypeScript", "Paystack"],
+    live: "https://holdbodi.com",
     featured: true,
   },
   {
@@ -131,21 +143,74 @@ export const experience = [
   {
     role: "Lead Engineer & Technology Partner",
     org: "Client and product work",
-    period: "2024 – now",
+    period: "2021 – now",
     points: [
-      "Led technology for Synchgate, Ajiroba, iGospel, EMS and SkyTrack ICT, from planning with business owners to launch and ongoing support.",
+      "Led technology for Synchgate, Titaar, Ajiroba, Holdbodi, EMS and SkyTrack ICT, from planning with business owners to launch and ongoing support.",
       "Chose and integrated vendors and providers across payments, content and hosting.",
     ],
   },
   {
-    role: "Backend Engineer",
-    org: "Expedier",
-    period: "1 yr 6 mos",
+    role: "Member",
+    org: "ForbesBLK",
+    period: "2023 – now",
     points: [
-      "Part of the team that built the B2B web platform.",
-      "Supported maintenance of the B2C mobile app platform.",
+      "Member of ForbesBLK, the Forbes community for Black entrepreneurs, professionals and leaders.",
     ],
   },
+  {
+    role: "Backend Software Engineer",
+    org: "Expedier (Fintech)",
+    period: "Oct 2024 – May 2026",
+    points: [
+      "Part of the team that built the B2B web platform.",
+      "Supported and maintained the B2C Expedier Global Money app for cross-border payments.",
+      "Worked with cross-functional teams on secure financial features aligned with fintech regulations.",
+    ],
+  },
+  {
+    role: "Backend Software Engineer",
+    org: "Entacrest",
+    period: "Jan 2024 – Aug 2024",
+    points: [
+      "Led a team of 5 engineers to build an internal tool that automated data processing, cutting manual effort by 35%.",
+      "Moved deployments onto Docker and Kubernetes, making releases 25% faster and scaling easier.",
+      "Found and fixed crash-prone bugs, improving application performance by 15%.",
+    ],
+  },
+  {
+    role: "Backend Software Engineer",
+    org: "AMIS",
+    period: "May 2023 – Dec 2023",
+    points: [
+      "Built authentication, API services and data models in Python and Django.",
+      "Worked in Agile sprints with unit testing and code reviews.",
+    ],
+  },
+  {
+    role: "Backend Software Engineer",
+    org: "SoftAmos Global",
+    period: "Jan 2022 – Mar 2023",
+    points: [
+      "Introduced code review, unit testing and continuous integration practices that sped up delivery.",
+      "Ran backend storage and hosting on AWS (EC2, S3).",
+    ],
+  },
+  {
+    role: "IT Support Specialist (Internship)",
+    org: "Nigerian Breweries Plc",
+    period: "2015 · 7 mos",
+    points: [
+      "Installed, configured and maintained hardware, software, networks, printers and scanners across the company.",
+      "Gave in-person and phone support, set up accounts for new users, and repaired or replaced equipment.",
+      "Tested new technology before it was rolled out.",
+    ],
+  },
+];
+
+export const education = [
+  { title: "BSc Statistics", org: "University of Ibadan" },
+  { title: "OND Electrical/Electronic Engineering", org: "Ronik Polytechnic, Lagos" },
+  { title: "Microsoft Certified: Azure Fundamentals", org: "Certification" },
 ];
 
 export const skills = [
@@ -158,8 +223,12 @@ export const skills = [
     items: ["Python", "Django", "Celery", "Node.js", "React", "Next.js", "TypeScript", "PostgreSQL"],
   },
   {
+    category: "Integrations",
+    items: ["Paystack", "Flutterwave", "Paga", "Nomba", "PayPal", "Sumsub (KYC)", "Suregifts (gift cards)", "Termii (SMS)", "Mailgun (email)", "PDFMonkey (statements & documents)"],
+  },
+  {
     category: "Platforms & Tools",
-    items: ["Paystack", "Flutterwave", "Paga", "AWS", "Docker", "Vercel", "Electron", "Claude API"],
+    items: ["AWS", "Docker", "Vercel", "Electron", "Contentful", "Claude API"],
   },
 ];
 

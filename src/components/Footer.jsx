@@ -16,8 +16,9 @@ export default function Footer() {
           {personal.github && <a href={personal.github} target="_blank" rel="noreferrer">GitHub</a>}
           {personal.linkedin && <a href={personal.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>}
           <a href={whatsappLink} target="_blank" rel="noreferrer">WhatsApp</a>
-          {personal.twitter && <a href={personal.twitter} target="_blank" rel="noreferrer">X / Twitter</a>}
+          {personal.instagram && <a href={personal.instagram} target="_blank" rel="noreferrer">Instagram</a>}
           <a href={`mailto:${personal.email}`}>Email</a>
+          {personal.cv && <a href={personal.cv} download>CV</a>}
         </div>
       </div>
     </footer>
