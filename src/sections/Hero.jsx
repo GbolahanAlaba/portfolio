@@ -1,6 +1,6 @@
 import { personal, stats, organisations, openToRoles, whatsappLink } from "../data/portfolio";
 import { LogoMark } from "../components/Logo";
-import { ArrowIcon, LinkedinIcon, WhatsAppIcon } from "../components/Icons";
+import { ArrowIcon, DownloadIcon, LinkedinIcon, WhatsAppIcon } from "../components/Icons";
 import portrait from "../assets/portrait.jpg";
 import styles from "./Hero.module.css";
 
@@ -33,9 +33,16 @@ export default function Hero() {
               Let's work together
               <ArrowIcon />
             </a>
-            <a href={whatsappLink} target="_blank" rel="noreferrer" className={styles.btnSecondary}>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.btnSecondary} ${styles.btnWhatsapp}`}
+              aria-label="Chat on WhatsApp"
+              title="Chat on WhatsApp"
+            >
               <span className={styles.whatsapp}><WhatsAppIcon size={18} /></span>
-              Chat on WhatsApp
+              <span className={styles.waLabel}>Chat on WhatsApp</span>
             </a>
             <a
               href={personal.linkedin}
@@ -47,8 +54,15 @@ export default function Hero() {
             >
               <LinkedinIcon size={18} />
             </a>
-            <a href={personal.cv} download className={styles.btnText}>
-              Download CV
+            <a
+              href={personal.cv}
+              download
+              className={styles.btnCv}
+              aria-label="Download my CV"
+              title="Download CV"
+            >
+              <DownloadIcon size={17} />
+              CV
             </a>
           </div>
         </div>
